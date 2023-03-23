@@ -1,0 +1,20 @@
+<p>second works!</p>
+<h1>{{msg}}</h1> 
+<div>
+    Username
+    <input type="text" [(ngModel)]="uname">
+    Date Of Birth
+    <input type="date" [(ngModel)]="DOB">
+    City
+    <input type="text" [(ngModel)]="city">
+
+
+</div>
+<button 
+(click)="save.emit([{'uname':uname,'dob':DOB,'city':city}])">
+Click on Second compo
+</button>
+<hr>
+<app-first (data)="info($event)"></app-first>
+Data from first component
+{{user}}

@@ -1,0 +1,100 @@
+<div>
+    <form [formGroup]="registerForm">
+        Username
+        <input type="text" formControlName="username" class="form-control"
+        [ngClass]="{'is-valid':registerForm.controls.username.valid,
+        'is-invalid':registerForm.controls.username.invalid &&
+        registerForm.controls.username.touched}"
+        >
+        
+        <p *ngIf="registerForm.controls.username.invalid &&
+          registerForm.controls.username.touched"
+        class="text-danger">Enter Username</p>
+
+        FUll Name
+        <div formGroupName="Name">
+            First Name :
+            <input type="text" class="form-control" formControlName="f_name">
+            <p *ngIf="registerForm.controls.Name.controls.f_name.invalid &&
+            registerForm.controls.Name.controls.f_name.touched"
+            class="text-danger">Please enter first name</p>
+            Last Name :
+            <input type="text" class="form-control" formControlName="l_name">
+            
+            Last Name
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Email Address 
+        <input type="text" formControlName="email"  class="form-control">
+    
+        Contact no 
+        <input type="text" formControlName="contactno"  class="form-control">
+
+        <p *ngIf="registerForm.controls.contactno.invalid && 
+        registerForm.controls.contactno.touched"
+        class="text-danger">Enter Valid Contact number</p>
+
+        <p *ngIf="registerForm.controls.contactno.errors?.['minlength'] ||
+         registerForm.controls.contactno.errors?.['maxlength']"
+         class="text-danger">Contact number should be 10digits</p>
+        DOB 
+        <input type="date" formControlName="DOB"  class="form-control">
+
+        <br>
+        Gender
+        <div> 
+        <input type="radio" formControlName="gender" value="male" > Male
+        <input type="radio" formControlName="gender" value="female"> Female
+
+        </div>
+        <br>
+        Courses
+        <select formControlName="courses"> 
+            <option>select</option>
+            <option *ngFor="let c of course">{{c}}</option>
+        </select>
+        <br>
+        Subscribe:
+        <input type="checkbox" formControlName="subscribe">
+        Please check this for more information from the institute
+<br>
+<button class="btn btn-primary" (click)="login()">Register</button>
+
+
+            
+
+
+
+    </form>
+    {{registerForm.value|json}}
+</div>
+<div>
+    <table>
+        <tr>
+        <th>email</th>
+        <th>Name</th>
+        </tr>
+        <tr *ngFor="let user of users">
+            <td>{{user.email}}</td>
+            <td>{{user.username}}</td>
+
+        </tr>
+    </table>
+</div>
+

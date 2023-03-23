@@ -1,0 +1,26 @@
+<p>store works!</p>
+<!-- {{products}} -->
+<!-- {{products|uniquecat}} -->
+<button class="btn btn-primary btn-sm mx-4"
+ *ngFor="let cat of products|uniquecat"
+ (click)="catname=cat.category"
+>{{cat.category|uppercase|json}}</button>
+<button class="btn btn-primary btn-sm mx-4"
+ 
+ (click)="catname=undefined"
+>All Products</button>
+
+<div class="container">
+    <div class="row my-4">
+        <div class="col" *ngFor="let product of products|category:catname">
+    <div class="card" style="width: 18rem;">
+    <img src="{{product.image}}" class="card-img-top" height="200px" >
+    <div class="card-body">
+      <h5 class="card-title">{{product.title}}</h5>
+      <p class="card-text">{{product.category}}</p>
+      <a href="#" class="btn btn-primary" routerLink="/view/{{product.id}}">View Product</a>
+    </div>
+</div>
+  </div>
+</div>
+</div>

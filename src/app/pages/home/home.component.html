@@ -1,0 +1,59 @@
+<!-- <button (click)="goto()">Click here to go for products page</button> -->
+<div class="container">
+<div class="row">
+    <div class="col my-5">
+        Form
+        <label class="form-label"> Task ID</label> 
+        <input type="text" [(ngModel)]="taskid" class="form-control">
+        <label class="form-label"> Task Name</label> 
+        <input type="text" [(ngModel)]="tname" class="form-control">
+        <label class="form-label"> Task Description</label> 
+        <input type="text" [(ngModel)]="tdesc" class="form-control">
+    
+    <button class="btn btn-primary my-4" (click)="enter()">Enter Task</button>
+    
+    </div>
+    <div class="col">
+        Form Registered data
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">SrNO</th>
+                <th scope="col">Task Id</th>
+                <th scope="col">TAsk Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Action</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let task of tasks;let i=index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{task.tid}}</td>
+                <td>{{task.tname}}</td>
+                <td>{{task.td}}</td>
+                <td><button class="btn sm-btn btn-warning mx-3" (click)="update(task.tid)">Edit</button>
+                    <button class="btn sm-btn btn-danger" (click)="delete(i)">Delete</button></td>
+
+              </tr>
+              
+            </tbody>
+          </table>
+    </div>
+</div>
+UPdate Form
+<div class="col my-5">
+  Form
+  <label class="form-label"> Task ID</label> 
+  <input type="text" [value]="task.tid" class="form-control">
+  <label class="form-label"> Task Name</label> 
+  <input type="text" [value]="task.tname" class="form-control">
+  <label class="form-label"> Task Description</label> 
+  <input type="text" [value]="task.td" class="form-control">
+
+<button class="btn btn-primary my-4" (click)="edit()">Update Task</button>
+
+</div>
+{{task|json}}
+
+</div>

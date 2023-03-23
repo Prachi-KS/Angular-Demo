@@ -1,0 +1,10 @@
+
+hello
+some data
+
+<div class="tp-wrapper">
+    <div *ngFor="let card of c2 ;let i=index" class="tp-box" (click)="toggleFlip(i)" [@flipState]="flip">
+      <div class="tp-box_side tp-box_front"></div>
+      <div class="tp-box_side tp-box_back" [ngClass]="{'one':card==1,'two':card==2,'three':card==3,'four':card==4||card==5||card==6}"></div>
+    </div>
+  </div>

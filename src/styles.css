@@ -1,1 +1,75 @@
 /* You can add global styles to this file, and also import other style files */
+.tp-wrapper {
+    display:grid;
+    grid-template-columns: auto auto auto;
+    width:50%;
+    margin:auto;
+    height: 100px;
+  }
+  
+  .tp-box {
+    -webkit-perspective: 800px;
+    perspective: 800px;
+    position: relative;
+    width: 200px;
+    height: 250px;
+    margin: 2rem auto;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform : transform 1s;
+        -ms-transform : transform 1s;
+            transform : transform 1s;
+  }
+  .tp-box__side {
+     width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  .tp-box__front {
+    background: green;
+    -webkit-transform : rotateY(0deg);
+    -ms-transform     : rotateY(0deg);
+    transform         : rotateY(0deg);
+  }
+  .tp-box__back {
+    -webkit-transform : rotateY(-180deg);
+    -ms-transform     : rotateY(-180deg);
+    transform         : rotateY(-180deg);
+  }
+
+  .one{
+    /* background-image: url('https://thumbs.dreamstime.com/z/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg'); */
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(55, 45, 30);
+}
+
+.two{
+    /* background-image: url('https://thumbs.dreamstime.com/z/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg'); */
+    background-size: cover;
+    background-color:aquamarine;
+
+    background-position: center;
+}
+
+.three{
+    /* background-image: url('https://thumbs.dreamstime.com/z/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg'); */
+    background-color: aqua;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.four{
+    background-size: cover;
+    background-position: center;
+    background-color: blueviolet;
+    /* background-image:url('https://png.pngtree.com/png-vector/20200724/ourlarge/pngtree-hand-drawn-cute-cartoon-signage-sign-simple-illustration-image-cross-sign-png-image_2312556.jpg') */
+}

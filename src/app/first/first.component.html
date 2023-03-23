@@ -1,0 +1,30 @@
+<h3 >First Component</h3>
+<br>
+<div>
+    Username
+    <input type="text" [(ngModel)]="uname">
+    Date Of Birth
+    <input type="date" [(ngModel)]="DOB">
+    City
+    <input type="text" [(ngModel)]="city">
+
+
+</div>
+<button (click)="data.emit([uname,DOB,city])">Submit</button>
+
+<input type="text" 
+placeholder="enter something"  
+class ="" 
+id="input1"
+[(ngModel)]="text1">
+========================
+
+<!-- 
+<app-second [msg]="text1"
+[user]="users"
+
+(save)="work($event)"
+>
+
+</app-second> -->
+{{test}}
